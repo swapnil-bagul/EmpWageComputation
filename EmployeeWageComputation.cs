@@ -2,7 +2,7 @@
 
 namespace EmployeeWageComputation
 {
-    class Program
+    class Welcome
     {
         static void Main(string[] args)
         {
