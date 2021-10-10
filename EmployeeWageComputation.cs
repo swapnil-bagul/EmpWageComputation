@@ -34,7 +34,6 @@ namespace EmployeeWageComputation
             Console.WriteLine("Employee Daily Wage is " + empWage);
             Console.ReadLine();
 
-
         }
     }
 }
