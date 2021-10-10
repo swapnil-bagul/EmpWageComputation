@@ -17,24 +17,26 @@ namespace EmployeeWageComputation
 
             //creating object 
             Random Attendance = new Random();
-            int userInput = Attendance.Next(0, 3);
+            int empInput = Attendance.Next(0, 3);
 
-            //if else if programming construct
-            if(userInput == IS_FULL_TIME  )
+            //switch case programming construct
+            switch (empInput)
             {
-                empHr = 8;
-                Console.WriteLine("Employee is Full time");
+                case IS_FULL_TIME: 
+                    empHr = 8;
+                    Console.WriteLine("Employee is Full time");
+                    break;
+
+                case IS_PART_TIME:
+                    empHr = 4;
+                    Console.WriteLine("Employee is Part time");
+                    break;
+                default:
+                    empHr = 0;
+                    Console.WriteLine("Employee is Absent");
+                    break;
             }
-            else if (userInput == IS_PART_TIME )
-            {
-                Console.WriteLine("Employee is Part time");
-                empHr = 4;
-            }
-            else 
-            {
-                Console.WriteLine("Employee is Absent");
-                empHr = 0;
-            }
+
             // Formula for finding employe wage
             empWage = EMP_RATE_PER_HR * empHr;
             Console.WriteLine("Employee Daily Wage is " + empWage);
