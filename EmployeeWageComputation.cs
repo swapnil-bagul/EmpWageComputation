@@ -14,6 +14,7 @@ namespace EmployeeWageComputation
         int maxWorkingHrs;
         string companyName;
         static int empHr = 0;
+        //static method 
         public static int Check(int empInput)
         {
             
@@ -44,6 +45,7 @@ namespace EmployeeWageComputation
             //while loop programming construct
             while (day < maxWorkingDay && totalHrs <= maxWorkingHrs)
             {
+                //used predefined Random class
                 Random attendance = new Random();
                 int empInput = attendance.Next(0, 3);
 
