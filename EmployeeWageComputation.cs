@@ -65,5 +65,6 @@ namespace EmployeeWageComputation
         {
            Employee.Wage ();
         }
+
     }
 }
