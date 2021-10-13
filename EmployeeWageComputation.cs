@@ -7,11 +7,12 @@ namespace EmployeeWageComputation
         //constants
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
-        public const int EMP_RATE_PER_HR = 20;
-        public const int NUM_OF_WORKING_DAYS = 20;
-        public const int NUM_OF_WORKING_HRS = 100;
 
         //static variable
+        int empRate;
+        int maxWorkingDay;
+        int maxWorkingHrs;
+        string companyName;
         static int empHr = 0;
         public static int Check(int empInput)
         {
@@ -32,7 +33,7 @@ namespace EmployeeWageComputation
 
             }
         }
-        public static void Wage()
+        public static void Wage(string companyName,int maxWorkingDay,int maxWorkingHrs,int empRate )
         {
             //local variable
             int empWage = 0;
@@ -41,7 +42,7 @@ namespace EmployeeWageComputation
             int totalHrs = 0;
 
             //while loop programming construct
-            while (day < NUM_OF_WORKING_DAYS && totalHrs <= NUM_OF_WORKING_HRS)
+            while (day < maxWorkingDay && totalHrs <= maxWorkingHrs)
             {
                 Random attendance = new Random();
                 int empInput = attendance.Next(0, 3);
@@ -50,7 +51,7 @@ namespace EmployeeWageComputation
                 Employee .Check (empInput);
 
                 // Formula for finding employe wage
-                empWage = EMP_RATE_PER_HR * empHr;
+                empWage = empRate  * empHr;
                 //formula for finding total emloyee wage
                 totalEmpWage = totalEmpWage + empWage;
                 //incrementation
@@ -58,12 +59,13 @@ namespace EmployeeWageComputation
                 totalHrs = totalHrs + empHr;
 
             }
-            Console.WriteLine("Total Employee Wage for {0} Days & {1} Hrs is {2} ", day, totalHrs, totalEmpWage);
+            Console.WriteLine("{0} : Total Employee Wage for {1} Days & {2} Hrs is {3} ",companyName, day, totalHrs, totalEmpWage);
             Console.ReadLine();
         }
         static void Main(string[] args)
         {
-           Employee.Wage ();
+           Employee.Wage ("Tata Motors", 24, 120, 30);
+           Employee.Wage("Maruti Suzuki", 25, 110, 35);
         }
 
     }
