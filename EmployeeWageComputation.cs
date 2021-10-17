@@ -69,7 +69,6 @@ namespace EmployeeWageComputation
         public string toString()
         {
             return "Total Employee Wage For " + companyName +" "+"is " + totalEmpWage;
-          
         }
         static void Main(string[] args)
         {
