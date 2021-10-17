@@ -7,14 +7,14 @@ namespace EmployeeWageComputation
         //constants
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
-
         
         private int empRate;
         private int maxWorkingDay;
         private int maxWorkingHrs;
         private int totalEmpWage;
         private string companyName;
-
+        
+        //Constructor
         public EmployeeBuilderObject (string companyName, int maxWorkingDay, int maxWorkingHrs, int empRate)
         {
             this.companyName = companyName;
