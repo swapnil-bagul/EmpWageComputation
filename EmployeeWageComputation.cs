@@ -24,11 +24,11 @@ namespace EmployeeWageComputation
         {
             for (int i=0; i<numOfCompanies; i++)
             {
-                companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(this.companyEmpWageArray[i]));
+                companyEmpWageArray[i].setTotalEmpWage(this.ComputeEmpWage(this.companyEmpWageArray[i]));
                 Console.WriteLine(this.companyEmpWageArray[i].toString());
             }
         }
-        private int computeEmpWage(CompanyEmpWage companyEmpWage)
+        private int ComputeEmpWage(CompanyEmpWage Company)
         {
             int empWage = 0;
             int totalWorkingDay = 0;
@@ -36,7 +36,7 @@ namespace EmployeeWageComputation
             int empHr = 0;
 
             //while loop programming construct
-            while (totalWorkingDay < companyEmpWage.maxWorkingDay && totalWorkingHrs <= companyEmpWage.maxWorkingHrs)
+            while (totalWorkingDay < Company.maxWorkingDay && totalWorkingHrs <= Company.maxWorkingHrs)
             {
                 //used predefined Random class
                 Random attendance = new Random();
@@ -59,9 +59,9 @@ namespace EmployeeWageComputation
                 }
 
                 // Formula for calculating employe wage
-                empWage = companyEmpWage.empRate * empHr;
+                empWage = Company.empRate * empHr;
                 //formula for calculating total emloyee wage
-                companyEmpWage.totalEmpWage = companyEmpWage.totalEmpWage + empWage;
+                Company.totalEmpWage = Company.totalEmpWage + empWage;
                 //incrementation
                 totalWorkingDay++;
                 totalWorkingHrs = totalWorkingHrs + empHr;
@@ -69,7 +69,7 @@ namespace EmployeeWageComputation
             }
                 
             Console.WriteLine("Total Working Days: {0}, Total Working Hrs: {1}", totalWorkingDay, totalWorkingHrs);
-            return companyEmpWage.totalEmpWage;
+            return Company.totalEmpWage;
          
         }
        
