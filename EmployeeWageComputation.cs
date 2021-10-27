@@ -8,13 +8,15 @@ namespace EmployeeWageComputation
 {
     class EmpWageBuilder:IComputeEmpWage 
     {
-        //constants
+        //constants variable 
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
 
+        //Used LinkedList And Dictionary
         private LinkedList<CompanyEmpWage> companyEmpWageList;
         private Dictionary<string, CompanyEmpWage> companyToEmpWageMap;
 
+        //EmpWageBuilder constructor
         public EmpWageBuilder ()
         {
             this.companyEmpWageList = new LinkedList<CompanyEmpWage>();

@@ -4,11 +4,11 @@ using System.Text;
 
 namespace EmployeeWageComputation
 {
-    public interface IComputeEmpWage
+    // used interface IComputeEmpWage
+    public interface IComputeEmpWage 
     {
         public void addCompanyEmpWage(string companyName, int maxWorkingDay, int maxWorkingHrs, int empRate);
         public void computeEmpWage();
-
         public int getTotalWage(string company);
     }
     class CompanyEmpWage
@@ -19,6 +19,7 @@ namespace EmployeeWageComputation
         public int totalEmpWage;
         public string companyName;
 
+        // Create CompanyEmpWage constructor and pass parameter
         public CompanyEmpWage (string companyName, int maxWorkingDay, int maxWorkingHrs, int empRate)
         {
             this.companyName = companyName;
@@ -32,7 +33,9 @@ namespace EmployeeWageComputation
             this.totalEmpWage = totalEmpWage;
 
         }
-        public string toString()
+
+        //toString() method to display output
+        public string toString()  
         {
             return "Total Employee Wage For " + companyName + " " + "is " + totalEmpWage;
         }
